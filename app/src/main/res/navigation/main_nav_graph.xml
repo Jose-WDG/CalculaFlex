@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment"
+    android:id="@+id/main_nav_graph">
+
+    <fragment
+        tools:layout="@layout/fragment_log_in"
+        android:id="@+id/loginFragment"
+        android:name="br.com.careme.calculaflex.ui.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_singnUpFragment"
+            app:destination="@id/singnUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_betterFuelFragment"
+            app:destination="@id/betterFuelFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_sign_up"
+        android:id="@+id/singnUpFragment"
+        android:name="br.com.careme.calculaflex.ui.singnup.SingnUpFragment"
+        android:label="SingnUpFragment" >
+        <action
+            android:id="@+id/action_singnUpFragment_to_betterFuelFragment"
+            app:destination="@id/betterFuelFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_better_fuel"
+        android:id="@+id/betterFuelFragment"
+        android:name="br.com.careme.calculaflex.ui.betterfuel.BetterFuelFragment"
+        android:label="BetterFuelFragment" >
+        <action
+            android:id="@+id/action_betterFuelFragment2_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <argument
+            android:name="user_email"
+            app:argType="string"
+            android:defaultValue="Não definido" />
+    </fragment>
+</navigation>
